@@ -13,6 +13,10 @@ const s3 = new S3Client({
   }
 })
 
+fastify.get('/', async (request, reply) => {
+  return { server: 'ok' }
+})
+
 fastify.get('/image', async (request, reply) => {
   const { path } = request.query as { path?: string }
 
